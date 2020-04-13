@@ -16,14 +16,14 @@ def get_team_id(x):
 
 number_of_games = 100
 compared_team_abb = "LAL"
+first_team_id = get_team_id(compared_team_abb)
+first_team_games_df = leaguegamefinder.LeagueGameFinder(
+        team_id_nullable=first_team_id).get_data_frames()[0].head(number_of_games)
+
 for abb in teams_abbreviation_list:
     if(abb == compared_team_abb):
         continue
-    first_team_id = get_team_id(compared_team_abb)
     second_team_id = get_team_id(abb)
-
-    first_team_games_df = leaguegamefinder.LeagueGameFinder(
-        team_id_nullable=first_team_id).get_data_frames()[0].head(number_of_games)
     second_team_games_df = leaguegamefinder.LeagueGameFinder(
         team_id_nullable=second_team_id).get_data_frames()[0].head(number_of_games)
     fig, ax = plt.subplots()
