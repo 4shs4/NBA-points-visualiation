@@ -15,11 +15,11 @@ def get_team_id(x):
     return team_id
 
 number_of_games = 100
-compated_team_abb = "LAL"
+compared_team_abb = "LAL"
 for abb in teams_abbreviation_list:
-    if(abb == compated_team_abb):
+    if(abb == compared_team_abb):
         continue
-    first_team_id = get_team_id(compated_team_abb)
+    first_team_id = get_team_id(compared_team_abb)
     second_team_id = get_team_id(abb)
 
     first_team_games_df = leaguegamefinder.LeagueGameFinder(
@@ -29,8 +29,8 @@ for abb in teams_abbreviation_list:
     fig, ax = plt.subplots()
     first_team_games_df.plot(x='GAME_DATE', y='PTS', ax=ax)
     second_team_games_df.plot(x='GAME_DATE', y='PTS', ax=ax)
-    ax.legend([compated_team_abb, abb])
-    imgName = (compated_team_abb+'vs'+abb+'.png')
+    ax.legend([compared_team_abb, abb])
+    imgName = (compared_team_abb+'vs'+abb+'.png')
     plt.savefig(imgName)
     plt.close(fig)
     print('done')
