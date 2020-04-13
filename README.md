@@ -1,6 +1,6 @@
 # NBA-points-visualiation
 
-A simple Python project aims to visualize points  every team had scored in the last (n) geames [100 was given] 
+A simple Python project aims to visualize points  every team had scored in the last (n) games [100 was given] 
 in comparison to a single specified team [Los Angeles Lakers was given]. we are able to change those variables as needed.
 
 # Skills used 
